@@ -75,6 +75,7 @@ class LoadingMore extends Success {
     super.pageSize = 20,
   });
 
+  @override
   LoadingMore copyWith({
     List<LaunchItem>? launches,
     List<LaunchItem>? filteredLaunches,

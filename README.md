@@ -1,16 +1,36 @@
-# space_x_test_task
+# Тестовое задание
 
-A new Flutter project.
+Стек используемых технологий:
+ - bloc
+ - shared_preferences
+ - dio
+ - provider
+ - equatable
+ - intl
+ - mockito
+ - freezed
+ - build_runner
 
-## Getting Started
+## Реализация DI через провайдеры
 
-This project is a starting point for a Flutter application.
+Поскольку flutter оптимизирован под работу с InheritedWidget, алгоритмическая сложность который O(1), мною было принято решение использовать провайдеры в качестве DI.
 
-A few resources to get you started if this is your first Flutter project:
+## Реализация кэширования
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Для реализации кэширования был использован shared_preferences
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Управление состоянием
+
+Для реализации логики управления состоянием был использован bloc
+
+## Генерация кода и freezed
+
+Для реализации большинства классов состояний и data-классов был использован freezed и build_runner. Исключения - LaunchesListState, поскольку он содержит такие параметры, как pageSize и page, которые нужны во всех его состояниях.
+
+## Запуск и проверка
+
+Для запука веб-версии рекомендую использовать команду 
+
+```
+flutter run -d chrome --web-browser-flag "--disable-web-security"  
+```
