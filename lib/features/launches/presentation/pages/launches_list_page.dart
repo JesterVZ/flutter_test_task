@@ -90,6 +90,7 @@ String _localeErrors(NetworkException exception) {
               Success() => Column(
                 children: [
                   TextFormField(
+                    decoration: InputDecoration(hintText: 'Поиск'),
                     onChanged: (value) {
                       context.read<LaunchesListBloc>().add(
                         LaunchesListEvent.search(query: value),
